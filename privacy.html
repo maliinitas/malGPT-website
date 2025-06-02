@@ -17,29 +17,27 @@
     }
 
     body {
-      margin: 0;
-      padding: 0 20px 60px;
       font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 20px;
       background: var(--bg-dark);
       color: var(--text-dark);
       display: flex;
       flex-direction: column;
       min-height: 100vh;
-      max-width: 800px;
-      margin-left: auto;
-      margin-right: auto;
     }
 
     header {
       background: var(--section-bg-dark);
-      text-align: center;
       padding: 20px;
-      margin-bottom: 30px;
+      text-align: center;
+      border-radius: 8px;
+      margin-bottom: 20px;
     }
 
     header h1 {
       margin: 0;
-      font-size: 2rem;
       color: var(--highlight-dark);
     }
 
@@ -49,7 +47,7 @@
 
     nav a {
       color: var(--text-dark);
-      margin: 0 10px;
+      margin: 0 12px;
       text-decoration: none;
       font-weight: bold;
     }
@@ -59,8 +57,8 @@
     }
 
     #darkModeToggle {
-      margin-top: 10px;
-      padding: 6px 12px;
+      margin-top: 15px;
+      padding: 8px 14px;
       background: #444;
       color: #fff;
       border: none;
@@ -68,22 +66,19 @@
       cursor: pointer;
     }
 
-    h1, h2 {
+    main {
+      flex: 1;
+    }
+
+    h2 {
       color: var(--highlight-dark);
     }
 
-    ul {
-      list-style-type: disc;
-      padding-left: 20px;
-    }
-
-    a {
-      color: var(--highlight-dark);
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
+    section {
+      background: var(--section-bg-dark);
+      padding: 20px;
+      border-radius: 8px;
+      line-height: 1.6;
     }
 
     footer {
@@ -92,11 +87,8 @@
       text-align: center;
       padding: 15px;
       font-size: 0.9em;
-      margin-top: auto;
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      right: 0;
+      margin-top: 40px;
+      border-radius: 8px;
     }
   </style>
 </head>
@@ -109,35 +101,17 @@
       <a href="donate.html">Donate</a>
       <a href="support.html">Support</a>
       <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms &amp; Conditions</a>
     </nav>
     <button id="darkModeToggle">Toggle Dark Mode</button>
   </header>
 
   <main>
-    <h1>Privacy Policy</h1>
-    <p>Last updated: June 2, 2025</p>
-
-    <p>At <strong>malGPT</strong>, your privacy is important to us. This Privacy Policy explains how we collect, use, and protect your information when you use our website and Discord bot.</p>
-
-    <h2>Information We Collect</h2>
-    <ul>
-      <li><strong>Discord Information:</strong> We may collect your Discord user ID and username when you interact with malGPT for bot functionality.</li>
-      <li><strong>Usage Data:</strong> We may collect data on how you use the bot to improve features and fix bugs.</li>
-      <li><strong>Cookies:</strong> Our website does not use cookies to track you.</li>
-    </ul>
-
-    <h2>How We Use Your Information</h2>
-    <p>We use your data solely to provide and improve malGPT’s services and to communicate important updates.</p>
-
-    <h2>Data Sharing and Security</h2>
-    <p>We do not sell or share your personal information with third parties except as required by law.</p>
-    <p>We take reasonable measures to protect your data but cannot guarantee absolute security.</p>
-
-    <h2>Your Choices</h2>
-    <p>You can revoke the bot’s permissions in your Discord server settings at any time.</p>
-
-    <h2>Contact Us</h2>
-    <p>If you have any questions about this policy, please contact us via our <a href="https://discord.gg/AtxX6ZPAd8" target="_blank" rel="noopener noreferrer">Support Server</a>.</p>
+    <h2>Privacy Policy</h2>
+    <section>
+      <p>At malGPT, we respect your privacy. We do not collect personal data beyond what is necessary for bot functionality. We do not sell or share your information with third parties.</p>
+      <p>For more details, please contact us via the Support page.</p>
+    </section>
   </main>
 
   <footer>
@@ -150,13 +124,8 @@
 
     toggleBtn.addEventListener('click', () => {
       darkMode = !darkMode;
-      if(darkMode) {
-        document.body.style.background = 'var(--bg-dark)';
-        document.body.style.color = 'var(--text-dark)';
-      } else {
-        document.body.style.background = 'var(--bg-light)';
-        document.body.style.color = 'var(--text-light)';
-      }
+      document.body.style.background = darkMode ? 'var(--bg-dark)' : 'var(--bg-light)';
+      document.body.style.color = darkMode ? 'var(--text-dark)' : 'var(--text-light)';
     });
   </script>
 </body>
