@@ -3,71 +3,125 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>About malGPT</title>
+  <title>Donate - malGPT</title>
   <style>
+    :root {
+      --bg-color: #2c2f33;
+      --text-color: #ffffff;
+      --accent-color: #7289da;
+      --button-hover: #5b6eae;
+    }
+
+    body.light-mode {
+      --bg-color: #ffffff;
+      --text-color: #2c2f33;
+      --accent-color: #5865F2;
+      --button-hover: #4a52b1;
+    }
+
     body {
       font-family: Arial, sans-serif;
-      max-width: 800px;
-      margin: 40px auto;
-      padding: 0 20px;
-      background: #2c2f33;
-      color: #fff;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+      transition: background-color 0.3s, color 0.3s;
     }
-    h1, h2 {
-      color: #7289da;
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
+
     nav {
-      margin-bottom: 20px;
+      display: flex;
+      gap: 15px;
+      margin: 20px 0;
     }
+
     nav a {
-      margin-right: 15px;
+      color: var(--accent-color);
       text-decoration: none;
-      color: #7289da;
       font-weight: bold;
     }
-    ul {
-      list-style: none;
-      padding-left: 0;
+
+    nav a:hover {
+      text-decoration: underline;
     }
-    li {
-      margin: 8px 0;
+
+    h2 {
+      color: var(--accent-color);
+    }
+
+    .donate-box {
+      background: #23272a;
+      padding: 20px;
+      border-radius: 8px;
+    }
+
+    .donate-box p {
+      margin: 10px 0;
+    }
+
+    .donate-box a {
+      color: var(--accent-color);
+      font-weight: bold;
+    }
+
+    footer {
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid #444;
+      text-align: center;
+      font-size: 0.9em;
+      color: #aaa;
+    }
+
+    #darkModeToggle {
+      padding: 8px 14px;
+      background: #444;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    #darkModeToggle:hover {
+      background: #555;
     }
   </style>
 </head>
 <body>
+  <header>
+    <h1>Donate to Support malGPT</h1>
+    <button id="darkModeToggle">Toggle Dark Mode</button>
+  </header>
+
   <nav>
     <a href="index.html">Home</a>
-    <a href="about.html">About</a>
+    <a href="donate.html">Donate</a>
+    <a href="faq.html">FAQ</a>
   </nav>
 
-  <h1>About malGPT</h1>
+  <div class="donate-box">
+    <p>malGPT is free to use, but maintaining and improving the bot takes time and hosting resources.</p>
+    <p>If you'd like to support the development, you can donate here:</p>
+    <p><a href="https://www.buymeacoffee.com/YOURNAME" target="_blank">Buy Me a Coffee ☕</a></p>
+    <p>Thank you for keeping malGPT alive and growing! 💖</p>
+  </div>
 
-  <p>
-    <strong>malGPT</strong> is a fun, intelligent, and easy-to-use Discord bot designed to bring powerful GPT-based interactions and entertaining commands to your server.
-  </p>
-
-  <h2>Features</h2>
-  <ul>
-    <li>Slash commands for speed and ease</li>
-    <li>Fun tools like <code>/8ball</code>, <code>/coinflip</code>, and <code>/roll</code></li>
-    <li>Utility features like <code>/avatar</code> and <code>/ping</code></li>
-    <li>Simple setup and friendly UX</li>
-    <li>GPT integrations coming soon!</li>
-  </ul>
-
-  <h2>Who Made This?</h2>
-  <p>
-    malGPT is developed and maintained by <strong>maliinitas</strong>. Built with passion for the Discord community and a love for creating cool tools.
-  </p>
-
-  <h2>Support</h2>
-  <p>
-    Need help or have feedback? Join the
-    <a href="https://discord.gg/AzQNErBgaZ" target="_blank" rel="noopener noreferrer">Support Server</a> and let us know!
-  </p>
-
-  <footer style="margin-top: 40px; padding-top: 20px; border-top: 1px solid #444; color: #bbb; font-size: 14px; text-align: center;">
-    &copy; 2025 maliinitas • <a href="https://github.com/maliinitas/malGPT-website" target="_blank" rel="noopener noreferrer" style="color:#7289da;">GitHub Repo</a>
+  <footer>
+    <p>&copy; 2025 malGPT. All rights reserved.</p>
   </footer>
+
+  <script>
+    const toggleBtn = document.getElementById('darkModeToggle');
+    toggleBtn.addEventListener('click', () => {
+      document.body.classList.toggle('light-mode');
+    });
+  </script>
 </body>
 </html>
