@@ -17,9 +17,10 @@
     }
 
     body {
-      margin: 0;
-      padding: 0;
       font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 20px;
       background: var(--bg-dark);
       color: var(--text-dark);
       display: flex;
@@ -29,13 +30,14 @@
 
     header {
       background: var(--section-bg-dark);
-      text-align: center;
       padding: 20px;
+      text-align: center;
+      border-radius: 8px;
+      margin-bottom: 20px;
     }
 
     header h1 {
       margin: 0;
-      font-size: 2rem;
       color: var(--highlight-dark);
     }
 
@@ -45,7 +47,7 @@
 
     nav a {
       color: var(--text-dark);
-      margin: 0 10px;
+      margin: 0 12px;
       text-decoration: none;
       font-weight: bold;
     }
@@ -55,8 +57,8 @@
     }
 
     #darkModeToggle {
-      margin-top: 10px;
-      padding: 6px 12px;
+      margin-top: 15px;
+      padding: 8px 14px;
       background: #444;
       color: #fff;
       border: none;
@@ -66,26 +68,26 @@
 
     main {
       flex: 1;
-      padding: 40px 20px;
-      max-width: 800px;
-      margin: 0 auto;
     }
 
     h2 {
       color: var(--highlight-dark);
     }
 
-    p {
-      line-height: 1.6;
+    .support-info {
+      background: var(--section-bg-dark);
+      padding: 20px;
+      border-radius: 8px;
+      text-align: center;
     }
 
-    a.support-link {
+    .support-info a {
       color: var(--highlight-dark);
       font-weight: bold;
       text-decoration: none;
     }
 
-    a.support-link:hover {
+    .support-info a:hover {
       text-decoration: underline;
     }
 
@@ -95,6 +97,8 @@
       text-align: center;
       padding: 15px;
       font-size: 0.9em;
+      margin-top: 40px;
+      border-radius: 8px;
     }
   </style>
 </head>
@@ -106,14 +110,18 @@
       <a href="faq.html">FAQ</a>
       <a href="donate.html">Donate</a>
       <a href="support.html">Support</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms &amp; Conditions</a>
     </nav>
     <button id="darkModeToggle">Toggle Dark Mode</button>
   </header>
 
   <main>
-    <h2>Support Server</h2>
-    <p>Need help or want to chat with the community? Join our <a href="https://discord.gg/AtxX6ZPAd8" target="_blank" rel="noopener noreferrer" class="support-link">Support Server</a>.</p>
-    <p>We’re here to assist with any questions, bugs, or feature requests you may have regarding malGPT.</p>
+    <h2>Get Support</h2>
+    <div class="support-info">
+      <p>If you need help or want to report issues, join our <a href="https://discord.gg/AtxX6ZPAd8" target="_blank" rel="noopener noreferrer">Support Server</a>.</p>
+      <p>You can also email us at <a href="mailto:support@malgpt.com">support@malgpt.com</a>.</p>
+    </div>
   </main>
 
   <footer>
