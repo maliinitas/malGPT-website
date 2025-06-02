@@ -3,136 +3,190 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Donate to malGPT</title>
+  <title>Donate - malGPT</title>
   <style>
-    :root {
-      --bg-color: #2c2f33;
-      --text-color: #ffffff;
-      --accent-color: #7289da;
-      --button-hover: #5b6eae;
-      --section-bg: #23272a;
-    }
+    /* Include the exact same styles as index.html for consistency */
+    /* (You can copy-paste the entire <style> block from index.html here) */
 
-    body.light-mode {
-      --bg-color: #ffffff;
-      --text-color: #2c2f33;
-      --accent-color: #5865F2;
-      --button-hover: #4a52b1;
-      --section-bg: #f0f0f0;
+    :root {
+      --bg-light: #fff;
+      --text-light: #000;
+      --section-bg-light: #f2f2f2;
+      --accent-light: #7289da;
+
+      --bg-dark: #2c2f33;
+      --text-dark: #fff;
+      --section-bg-dark: #23272a;
+      --accent-dark: #7289da;
     }
 
     body {
       font-family: Arial, sans-serif;
-      background-color: var(--bg-color);
-      color: var(--text-color);
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 20px;
-      transition: background-color 0.3s, color 0.3s;
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 20px;
+      background: var(--bg-dark);
+      color: var(--text-dark);
+      padding-top: 70px;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    body.light-mode {
+      background: var(--bg-light);
+      color: var(--text-light);
+    }
+
+    h1, h2 {
+      color: var(--accent-dark);
+      transition: color 0.3s;
+    }
+
+    body.light-mode h1,
+    body.light-mode h2 {
+      color: var(--accent-light);
     }
 
     header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: var(--section-bg-dark);
+      color: var(--text-dark);
       display: flex;
+      flex-wrap: wrap;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 10px;
+      padding: 15px 30px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+      z-index: 1000;
+      gap: 10px;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    body.light-mode header {
+      background: var(--section-bg-light);
+      color: var(--text-light);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    header h1 {
+      flex: 1 1 150px;
+      margin: 0;
+      font-size: 1.5rem;
     }
 
     nav {
+      flex: 3 1 300px;
       display: flex;
       gap: 15px;
-      margin: 20px 0;
+      flex-wrap: wrap;
     }
 
     nav a {
-      color: var(--accent-color);
+      color: var(--accent-dark);
       text-decoration: none;
-      font-weight: bold;
+      font-weight: 600;
+      padding: 6px 8px;
+      border-radius: 4px;
+      white-space: nowrap;
+      transition: color 0.3s, background-color 0.3s;
+    }
+
+    body.light-mode nav a {
+      color: var(--accent-light);
     }
 
     nav a:hover {
       text-decoration: underline;
-    }
-
-    .section-box {
-      background: var(--section-bg);
-      padding: 20px;
-      border-radius: 8px;
-      margin-bottom: 20px;
-    }
-
-    .donate-button {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 12px 24px;
-      background-color: var(--accent-color);
-      color: white;
-      border-radius: 6px;
-      font-weight: bold;
-      text-decoration: none;
-      transition: background-color 0.3s ease;
-    }
-
-    .donate-button:hover {
-      background-color: var(--button-hover);
-    }
-
-    footer {
-      margin-top: 40px;
-      padding-top: 20px;
-      border-top: 1px solid #444;
-      text-align: center;
-      font-size: 0.9em;
-      color: #aaa;
+      background-color: rgba(114, 137, 218, 0.2);
     }
 
     #darkModeToggle {
-      padding: 8px 14px;
+      flex: 0 0 auto;
+      padding: 6px 12px;
       background: #444;
       color: #fff;
       border: none;
       border-radius: 6px;
       cursor: pointer;
       transition: background 0.3s;
+      white-space: nowrap;
     }
 
     #darkModeToggle:hover {
       background: #555;
     }
+
+    body.light-mode #darkModeToggle {
+      background: #ddd;
+      color: #333;
+    }
+
+    body.light-mode #darkModeToggle:hover {
+      background: #ccc;
+    }
+
+    /* Responsive */
+
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px 20px;
+      }
+      nav {
+        width: 100%;
+        justify-content: flex-start;
+        gap: 10px;
+        margin-bottom: 10px;
+      }
+      #darkModeToggle {
+        align-self: flex-end;
+      }
+    }
+
+    .donate-section {
+      background: var(--section-bg-dark);
+      padding: 20px;
+      border-radius: 8px;
+      transition: background 0.3s;
+    }
+
+    body.light-mode .donate-section {
+      background: var(--section-bg-light);
+    }
   </style>
 </head>
 <body>
   <header>
-    <h1>Donate</h1>
+    <h1>malGPT</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="donate.html">Donate</a>
+      <a href="faq.html">FAQ</a>
+      <a href="https://discord.gg/AtxX6ZPAd8" target="_blank" rel="noopener">Support</a>
+    </nav>
     <button id="darkModeToggle">Toggle Dark Mode</button>
   </header>
 
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="index.html#commands">Commands</a>
-    <a href="index.html#support">Support</a>
-  </nav>
+  <main>
+    <h2>Support malGPT</h2>
+    <div class="donate-section">
+      <p>If you enjoy using malGPT, consider supporting its development and hosting costs. Any contribution helps keep malGPT running and improves the bot with new features!</p>
 
-  <section class="section-box">
-    <p>Love using malGPT? Help support the project and keep it running smoothly by donating!</p>
-    <a
-      href="https://ko-fi.com/maliinitasofficial"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="donate-button"
-    >
-      Donate Now
-    </a>
-    <p style="margin-top: 10px; font-size: 0.9em; color: #bbb;">Even a small donation helps. Thank you for your support!</p>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 malGPT. Thank you for considering a donation.</p>
-  </footer>
+      <h3>Donate Links</h3>
+      <ul>
+        <li><a href="https://www.patreon.com/yourpage" target="_blank" rel="noopener noreferrer">Patreon</a></li>
+        <li><a href="https://paypal.me/yourlink" target="_blank" rel="noopener noreferrer">PayPal</a></li>
+        <li><a href="https://ko-fi.com/yourlink" target="_blank" rel="noopener noreferrer">Ko-fi</a></li>
+      </ul>
+    </div>
+  </main>
 
   <script>
-    const toggleBtn = document.getElementById('darkModeToggle');
-    toggleBtn.addEventListener('click', () => {
+    const toggle = document.getElementById('darkModeToggle');
+    toggle.addEventListener('click', () => {
       document.body.classList.toggle('light-mode');
     });
   </script>
