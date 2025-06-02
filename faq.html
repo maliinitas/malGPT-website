@@ -35,7 +35,6 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 10px;
     }
 
     nav {
@@ -56,19 +55,20 @@
 
     h2 {
       color: var(--accent-color);
-      margin-top: 30px;
+    }
+
+    .faq {
+      background: var(--section-bg);
+      padding: 20px;
+      border-radius: 8px;
     }
 
     .faq-item {
-      background: var(--section-bg);
-      padding: 15px 20px;
-      border-radius: 8px;
-      margin-bottom: 15px;
+      margin-bottom: 20px;
     }
 
-    .faq-item strong {
-      display: block;
-      margin-bottom: 8px;
+    .faq-item h3 {
+      margin-bottom: 5px;
     }
 
     footer {
@@ -93,11 +93,20 @@
     #darkModeToggle:hover {
       background: #555;
     }
+
+    .support-link {
+      margin-top: 30px;
+    }
+
+    .support-link a {
+      color: var(--accent-color);
+      font-weight: bold;
+    }
   </style>
 </head>
 <body>
   <header>
-    <h1>FAQ</h1>
+    <h1>malGPT FAQ</h1>
     <button id="darkModeToggle">Toggle Dark Mode</button>
   </header>
 
@@ -107,32 +116,31 @@
     <a href="faq.html">FAQ</a>
   </nav>
 
-  <section>
+  <div class="faq">
     <div class="faq-item">
-      <strong>❓ How do I invite malGPT to my server?</strong>
-      <p>Use the invite button on the homepage or click <a href="https://discord.com/oauth2/authorize?client_id=1378946485747712030&permissions=67584&scope=bot%20applications.commands" target="_blank" style="color: var(--accent-color);">this link</a>.</p>
+      <h3>What is malGPT?</h3>
+      <p>malGPT is a Discord bot designed to provide fun commands, answers, and interactions using GPT-like responses.</p>
     </div>
 
     <div class="faq-item">
-      <strong>⚙️ How do I use slash commands?</strong>
-      <p>Type <code>/</code> in any text channel where the bot is allowed and select from the list of commands that appear.</p>
+      <h3>How do I invite malGPT?</h3>
+      <p>Use the invite link on the home page, or click <a href="https://discord.com/oauth2/authorize?client_id=1378946485747712030&permissions=67584&scope=bot%20applications.commands" target="_blank">here</a>.</p>
     </div>
 
     <div class="faq-item">
-      <strong>📛 The bot isn’t responding — what should I do?</strong>
-      <p>Make sure it has permission to read/send messages. If that doesn’t fix it, try re-inviting it with the correct permissions or reach out in the support server.</p>
+      <h3>What commands can I use?</h3>
+      <p>Check out the command list on the Home page. New commands are added regularly!</p>
     </div>
 
     <div class="faq-item">
-      <strong>🧠 Does malGPT use real AI like ChatGPT?</strong>
-      <p>Currently, malGPT uses scripted responses. GPT support may be added in the future if costs and access allow it.</p>
+      <h3>Can I support the bot?</h3>
+      <p>Yes! Visit the <a href="donate.html">donate page</a> to help support development.</p>
     </div>
+  </div>
 
-    <div class="faq-item">
-      <strong>🆓 Is the bot free?</strong>
-      <p>Yes! malGPT is free to use. Donations are welcome to support hosting and development.</p>
-    </div>
-  </section>
+  <div class="support-link">
+    <p>Need more help? Join our <a href="https://discord.gg/AtxX6ZPAd8" target="_blank">Support Server</a>.</p>
+  </div>
 
   <footer>
     <p>&copy; 2025 malGPT. All rights reserved.</p>
