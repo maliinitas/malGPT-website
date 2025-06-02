@@ -75,18 +75,15 @@
       color: var(--highlight-dark);
     }
 
-    .donate-links {
-      background: var(--section-bg-dark);
-      padding: 20px;
-      border-radius: 8px;
-      text-align: center;
+    .donate-buttons {
       margin-top: 20px;
+      text-align: center;
     }
 
-    .donate-links a {
+    .support-button {
       display: inline-block;
-      margin: 10px 15px;
-      padding: 12px 24px;
+      margin-left: 15px;
+      padding: 10px 20px;
       background-color: var(--highlight-dark);
       color: white;
       border-radius: 6px;
@@ -95,7 +92,7 @@
       transition: background-color 0.3s ease;
     }
 
-    .donate-links a:hover {
+    .support-button:hover {
       background-color: #5b6eae;
     }
 
@@ -116,6 +113,8 @@
       <a href="faq.html">FAQ</a>
       <a href="donate.html">Donate</a>
       <a href="support.html">Support</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms</a>
     </nav>
     <button id="darkModeToggle">Toggle Dark Mode</button>
   </header>
@@ -124,9 +123,13 @@
     <h2>Support malGPT</h2>
     <p>Your donations help keep malGPT running and allow us to add new features. Thank you for your support!</p>
 
-    <div class="donate-links">
-      <a href="https://discord.gg/AtxX6ZPAd8" target="_blank" rel="noopener noreferrer">Join Support Server</a>
-      <a href="https://ko-fi.com/maliinitasofficial" target="_blank" rel="noopener noreferrer">Donate via Ko-fi</a>
+    <div class="donate-buttons">
+      <a href="https://ko-fi.com/Q5Q71FW29Q" target="_blank" rel="noopener noreferrer">
+        <img src="https://ko-fi.com/img/githubbutton_sm.svg" alt="Support me on Ko-fi" style="height: 36px;" />
+      </a>
+      <a href="https://discord.gg/AtxX6ZPAd8" target="_blank" rel="noopener noreferrer" class="support-button">
+        Join Support Server
+      </a>
     </div>
   </main>
 
