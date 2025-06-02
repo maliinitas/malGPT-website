@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Donate to malGPT</title>
+  <style>
+    :root {
+      --bg-color: #2c2f33;
+      --text-color: #ffffff;
+      --accent-color: #7289da;
+      --button-hover: #5b6eae;
+      --section-bg: #23272a;
+    }
+
+    body.light-mode {
+      --bg-color: #ffffff;
+      --text-color: #2c2f33;
+      --accent-color: #5865F2;
+      --button-hover: #4a52b1;
+      --section-bg: #f0f0f0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    nav {
+      display: flex;
+      gap: 15px;
+      margin: 20px 0;
+    }
+
+    nav a {
+      color: var(--accent-color);
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .section-box {
+      background: var(--section-bg);
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+
+    .donate-button {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 24px;
+      background-color: var(--accent-color);
+      color: white;
+      border-radius: 6px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .donate-button:hover {
+      background-color: var(--button-hover);
+    }
+
+    footer {
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid #444;
+      text-align: center;
+      font-size: 0.9em;
+      color: #aaa;
+    }
+
+    #darkModeToggle {
+      padding: 8px 14px;
+      background: #444;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    #darkModeToggle:hover {
+      background: #555;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Donate</h1>
+    <button id="darkModeToggle">Toggle Dark Mode</button>
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="index.html#commands">Commands</a>
+    <a href="index.html#support">Support</a>
+  </nav>
+
+  <section class="section-box">
+    <p>Love using malGPT? Help support the project and keep it running smoothly by donating!</p>
+    <a
+      href="https://your-donation-link.com"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="donate-button"
+    >
+      Donate Now
+    </a>
+    <p style="margin-top: 10px; font-size: 0.9em; color: #bbb;">Even a small donation helps. Thank you for your support!</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 malGPT. Thank you for considering a donation.</p>
+  </footer>
+
+  <script>
+    const toggleBtn = document.getElementById('darkModeToggle');
+    toggleBtn.addEventListener('click', () => {
+      document.body.classList.toggle('light-mode');
+    });
+  </script>
+</body>
+</html>
