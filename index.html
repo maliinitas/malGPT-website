@@ -23,25 +23,36 @@
 
     body {
       font-family: Arial, sans-serif;
+      margin: 0;
+      padding-top: 80px; /* make space for fixed header */
       background-color: var(--bg-color);
       color: var(--text-color);
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 20px;
       transition: background-color 0.3s, color 0.3s;
     }
 
     header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: var(--section-bg);
+      color: var(--text-color);
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 10px;
+      padding: 20px 40px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+      z-index: 1000;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.5em;
     }
 
     nav {
       display: flex;
-      gap: 15px;
-      margin: 20px 0;
+      gap: 20px;
     }
 
     nav a {
@@ -52,6 +63,30 @@
 
     nav a:hover {
       text-decoration: underline;
+    }
+
+    #darkModeToggle {
+      padding: 8px 14px;
+      background: #444;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    #darkModeToggle:hover {
+      background: #555;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    h2 {
+      color: var(--accent-color);
     }
 
     a.invite-button {
@@ -85,6 +120,15 @@
       margin: 8px 0;
     }
 
+    .support-link {
+      margin-top: 30px;
+    }
+
+    .support-link a {
+      color: var(--accent-color);
+      font-weight: bold;
+    }
+
     footer {
       margin-top: 40px;
       padding-top: 20px;
@@ -93,71 +137,55 @@
       font-size: 0.9em;
       color: #aaa;
     }
-
-    #darkModeToggle {
-      padding: 8px 14px;
-      background: #444;
-      color: #fff;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-
-    #darkModeToggle:hover {
-      background: #555;
-    }
   </style>
 </head>
 <body>
   <header>
     <h1>malGPT</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="donate.html">Donate</a>
+      <a href="faq.html">FAQ</a>
+      <a href="https://discord.gg/AtxX6ZPAd8" target="_blank">Support</a>
+    </nav>
     <button id="darkModeToggle">Toggle Dark Mode</button>
   </header>
 
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="donate.html">Donate</a>
-    <a href="faq.html">FAQ</a>
-  </nav>
+  <main>
+    <p>Welcome to malGPT, your Discord bot for everything GPT-related!</p>
 
-  <p>Welcome to malGPT, your Discord bot for everything GPT-related!</p>
+    <a
+      href="https://discord.com/oauth2/authorize?client_id=1378946485747712030&permissions=67584&scope=bot%20applications.commands"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="invite-button"
+    >
+      Invite malGPT to Your Server
+    </a>
 
-  <a
-    href="https://discord.com/oauth2/authorize?client_id=1378946485747712030&permissions=67584&scope=bot%20applications.commands"
-    target="_blank"
-    rel="noopener noreferrer"
-    class="invite-button"
-  >
-    Invite malGPT to Your Server
-  </a>
+    <h2>Commands</h2>
+    <div class="commands">
+      <ul>
+        <li><strong>/ping</strong> – Replies with "Pong!"</li>
+        <li><strong>/coinflip</strong> – Flips a coin</li>
+        <li><strong>/roll</strong> – Rolls a number between 1–100</li>
+        <li><strong>/8ball</strong> – Magic 8-Ball responses</li>
+        <li><strong>/avatar</strong> – Show user avatars</li>
+        <li><strong>/fact</strong> – Get a random fact</li>
+      </ul>
+    </div>
 
-  <h2>✅ Basic & Fun Slash Commands</h2>
-  <div class="commands">
-    <ul>
-      <li><strong>/ping</strong> — Replies with "Pong!"</li>
-      <li><strong>/coinflip</strong> — Flips a coin (Heads or Tails)</li>
-      <li><strong>/roll</strong> — Rolls a number between 1 and 100</li>
-      <li><strong>/8ball</strong> — Magic 8-ball answers to yes/no questions</li>
-      <li><strong>/avatar</strong> — Displays a user’s avatar</li>
-    </ul>
-  </div>
-
-  <h2>Support</h2>
-  <p>
-    Need help? Join our
-    <a href="https://discord.gg/AtxX6ZPAd8" target="_blank" style="color: var(--accent-color);">
-      Support Server
-    </a>.
-  </p>
+    <div class="support-link">
+      <p>Need help? Join our <a href="https://discord.gg/AtxX6ZPAd8" target="_blank">Support Server</a>.</p>
+    </div>
+  </main>
 
   <footer>
     <p>&copy; 2025 malGPT. All rights reserved.</p>
   </footer>
 
   <script>
-    const toggleBtn = document.getElementById('darkModeToggle');
-    toggleBtn.addEventListener('click', () => {
+    document.getElementById('darkModeToggle').addEventListener('click', () => {
       document.body.classList.toggle('light-mode');
     });
   </script>
