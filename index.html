@@ -38,10 +38,6 @@
       margin-bottom: 10px;
     }
 
-    h1, h2 {
-      color: var(--accent-color);
-    }
-
     nav {
       display: flex;
       gap: 15px;
@@ -58,14 +54,7 @@
       text-decoration: underline;
     }
 
-    .section-box {
-      background: var(--section-bg);
-      padding: 15px;
-      border-radius: 8px;
-      margin-bottom: 20px;
-    }
-
-    .invite-button {
+    a.invite-button {
       display: inline-block;
       margin: 20px 0;
       padding: 12px 24px;
@@ -77,8 +66,14 @@
       transition: background-color 0.3s ease;
     }
 
-    .invite-button:hover {
+    a.invite-button:hover {
       background-color: var(--button-hover);
+    }
+
+    .commands {
+      background: var(--section-bg);
+      padding: 15px;
+      border-radius: 8px;
     }
 
     ul {
@@ -121,47 +116,43 @@
   </header>
 
   <nav>
-    <a href="#home">Home</a>
-    <a href="#commands">Commands</a>
-    <a href="#support">Support</a>
-    <a href="donate.html">Donations</a>
+    <a href="index.html">Home</a>
+    <a href="donate.html">Donate</a>
+    <a href="faq.html">FAQ</a>
   </nav>
 
-  <section id="home" class="section-box">
-    <p>Welcome to malGPT, your Discord bot for everything GPT-related!</p>
-    <a
-      href="https://discord.com/oauth2/authorize?client_id=1378946485747712030&permissions=67584&scope=bot%20applications.commands"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="invite-button"
-    >
-      Invite malGPT to Your Server
-    </a>
-  </section>
+  <p>Welcome to malGPT, your Discord bot for everything GPT-related!</p>
 
-  <section id="commands" class="section-box">
-    <h2>✅ Basic & Fun Slash Commands</h2>
+  <a
+    href="https://discord.com/oauth2/authorize?client_id=1378946485747712030&permissions=67584&scope=bot%20applications.commands"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="invite-button"
+  >
+    Invite malGPT to Your Server
+  </a>
+
+  <h2>✅ Basic & Fun Slash Commands</h2>
+  <div class="commands">
     <ul>
-      <li><strong>/ping</strong> – Replies with "Pong!" to test if the bot is responsive.</li>
-      <li><strong>/coinflip</strong> – Flips a coin and returns either "Heads" or "Tails".</li>
-      <li><strong>/roll</strong> – Rolls a random number between 1 and 100.</li>
-      <li><strong>/8ball</strong> – Answers your yes/no questions with a Magic 8-Ball style response.</li>
-      <li><strong>/avatar</strong> – Shows the avatar of a mentioned user or yourself.</li>
+      <li><strong>/ping</strong> — Replies with "Pong!"</li>
+      <li><strong>/coinflip</strong> — Flips a coin (Heads or Tails)</li>
+      <li><strong>/roll</strong> — Rolls a number between 1 and 100</li>
+      <li><strong>/8ball</strong> — Magic 8-ball answers to yes/no questions</li>
+      <li><strong>/avatar</strong> — Displays a user’s avatar</li>
     </ul>
-  </section>
+  </div>
 
-  <section id="support" class="section-box">
-    <h2>Support</h2>
-    <p>
-      Need help? Join our
-      <a href="https://discord.gg/AtxX6ZPAd8" target="_blank" rel="noopener noreferrer" style="color: var(--accent-color);">
-        Support Server
-      </a>.
-    </p>
-  </section>
+  <h2>Support</h2>
+  <p>
+    Need help? Join our
+    <a href="https://discord.gg/AtxX6ZPAd8" target="_blank" style="color: var(--accent-color);">
+      Support Server
+    </a>.
+  </p>
 
   <footer>
-    <p>&copy; 2025 malGPT. Made with ❤️ for Discord users.</p>
+    <p>&copy; 2025 malGPT. All rights reserved.</p>
   </footer>
 
   <script>
