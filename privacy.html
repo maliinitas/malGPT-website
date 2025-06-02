@@ -17,10 +17,9 @@
     }
 
     body {
+      margin: 0;
+      padding: 0;
       font-family: Arial, sans-serif;
-      max-width: 800px;
-      margin: 40px auto;
-      padding: 0 20px;
       background: var(--bg-dark);
       color: var(--text-dark);
       display: flex;
@@ -30,14 +29,13 @@
 
     header {
       background: var(--section-bg-dark);
-      padding: 20px;
       text-align: center;
-      border-radius: 8px;
-      margin-bottom: 20px;
+      padding: 20px;
     }
 
     header h1 {
       margin: 0;
+      font-size: 2rem;
       color: var(--highlight-dark);
     }
 
@@ -47,7 +45,7 @@
 
     nav a {
       color: var(--text-dark);
-      margin: 0 12px;
+      margin: 0 10px;
       text-decoration: none;
       font-weight: bold;
     }
@@ -57,8 +55,8 @@
     }
 
     #darkModeToggle {
-      margin-top: 15px;
-      padding: 8px 14px;
+      margin-top: 10px;
+      padding: 6px 12px;
       background: #444;
       color: #fff;
       border: none;
@@ -68,17 +66,13 @@
 
     main {
       flex: 1;
+      padding: 40px 20px;
+      max-width: 800px;
+      margin: 0 auto;
     }
 
     h2 {
       color: var(--highlight-dark);
-    }
-
-    section {
-      background: var(--section-bg-dark);
-      padding: 20px;
-      border-radius: 8px;
-      line-height: 1.6;
     }
 
     footer {
@@ -87,8 +81,6 @@
       text-align: center;
       padding: 15px;
       font-size: 0.9em;
-      margin-top: 40px;
-      border-radius: 8px;
     }
   </style>
 </head>
@@ -101,17 +93,33 @@
       <a href="donate.html">Donate</a>
       <a href="support.html">Support</a>
       <a href="privacy.html">Privacy Policy</a>
-      <a href="terms.html">Terms &amp; Conditions</a>
+      <a href="terms.html">Terms & Conditions</a>
     </nav>
     <button id="darkModeToggle">Toggle Dark Mode</button>
   </header>
 
   <main>
     <h2>Privacy Policy</h2>
-    <section>
-      <p>At malGPT, we respect your privacy. We do not collect personal data beyond what is necessary for bot functionality. We do not sell or share your information with third parties.</p>
-      <p>For more details, please contact us via the Support page.</p>
-    </section>
+    <p>
+      Your privacy is important to us. This policy explains what data we collect, how we use it, and your rights.
+    </p>
+    <h3>Information We Collect</h3>
+    <ul>
+      <li>Discord user ID and username for bot functionality.</li>
+      <li>Messages and commands you send to the bot.</li>
+    </ul>
+    <h3>How We Use Your Data</h3>
+    <ul>
+      <li>To provide and improve bot features.</li>
+      <li>To moderate and maintain server quality.</li>
+    </ul>
+    <h3>Your Rights</h3>
+    <p>
+      You can request deletion of your data by contacting the server admins.
+    </p>
+    <p>
+      For any questions regarding privacy, please contact us via our <a href="support.html" style="color: var(--highlight-dark);">Support Server</a>.
+    </p>
   </main>
 
   <footer>
