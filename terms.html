@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Terms and Conditions - malGPT</title>
+  <title>Terms &amp; Conditions - malGPT</title>
   <style>
     :root {
       --bg-dark: #2c2f33;
@@ -17,29 +17,27 @@
     }
 
     body {
-      margin: 0;
-      padding: 0 20px 60px;
       font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 20px;
       background: var(--bg-dark);
       color: var(--text-dark);
       display: flex;
       flex-direction: column;
       min-height: 100vh;
-      max-width: 800px;
-      margin-left: auto;
-      margin-right: auto;
     }
 
     header {
       background: var(--section-bg-dark);
-      text-align: center;
       padding: 20px;
-      margin-bottom: 30px;
+      text-align: center;
+      border-radius: 8px;
+      margin-bottom: 20px;
     }
 
     header h1 {
       margin: 0;
-      font-size: 2rem;
       color: var(--highlight-dark);
     }
 
@@ -49,7 +47,7 @@
 
     nav a {
       color: var(--text-dark);
-      margin: 0 10px;
+      margin: 0 12px;
       text-decoration: none;
       font-weight: bold;
     }
@@ -59,8 +57,8 @@
     }
 
     #darkModeToggle {
-      margin-top: 10px;
-      padding: 6px 12px;
+      margin-top: 15px;
+      padding: 8px 14px;
       background: #444;
       color: #fff;
       border: none;
@@ -68,12 +66,19 @@
       cursor: pointer;
     }
 
-    h1, h2 {
+    main {
+      flex: 1;
+    }
+
+    h2 {
       color: var(--highlight-dark);
     }
 
-    ul {
-      padding-left: 20px;
+    section {
+      background: var(--section-bg-dark);
+      padding: 20px;
+      border-radius: 8px;
+      line-height: 1.6;
     }
 
     footer {
@@ -82,11 +87,8 @@
       text-align: center;
       padding: 15px;
       font-size: 0.9em;
-      margin-top: auto;
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      right: 0;
+      margin-top: 40px;
+      border-radius: 8px;
     }
   </style>
 </head>
@@ -99,38 +101,17 @@
       <a href="donate.html">Donate</a>
       <a href="support.html">Support</a>
       <a href="privacy.html">Privacy Policy</a>
-      <a href="terms.html">Terms & Conditions</a>
+      <a href="terms.html">Terms &amp; Conditions</a>
     </nav>
     <button id="darkModeToggle">Toggle Dark Mode</button>
   </header>
 
   <main>
-    <h1>Terms and Conditions</h1>
-    <p>Last updated: June 2, 2025</p>
-
-    <p>Welcome to malGPT! These terms and conditions outline the rules and regulations for the use of the malGPT Discord bot and associated services.</p>
-
-    <h2>1. Acceptance of Terms</h2>
-    <p>By using malGPT, you agree to comply with and be bound by these terms. If you do not agree, please do not use the bot.</p>
-
-    <h2>2. Use of the Bot</h2>
-    <ul>
-      <li>You agree to use malGPT responsibly and not for any malicious or illegal activities.</li>
-      <li>malGPT is provided "as is" without warranties of any kind.</li>
-      <li>We reserve the right to suspend or ban users who violate the rules.</li>
-    </ul>
-
-    <h2>3. Intellectual Property</h2>
-    <p>All intellectual property related to malGPT, including code and content, belongs to the creators unless otherwise stated.</p>
-
-    <h2>4. Liability</h2>
-    <p>We are not liable for any damages or losses caused by the use or inability to use malGPT.</p>
-
-    <h2>5. Changes to Terms</h2>
-    <p>We reserve the right to update or change these terms at any time without prior notice.</p>
-
-    <h2>6. Contact</h2>
-    <p>If you have questions about these terms, please contact us via our <a href="https://discord.gg/AtxX6ZPAd8" target="_blank" rel="noopener noreferrer">Support Server</a>.</p>
+    <h2>Terms &amp; Conditions</h2>
+    <section>
+      <p>By using malGPT, you agree to our terms and conditions. malGPT is provided "as is" without warranties of any kind. Use the bot responsibly and do not abuse its features.</p>
+      <p>For detailed terms, please contact us via the Support page.</p>
+    </section>
   </main>
 
   <footer>
@@ -143,13 +124,8 @@
 
     toggleBtn.addEventListener('click', () => {
       darkMode = !darkMode;
-      if(darkMode) {
-        document.body.style.background = 'var(--bg-dark)';
-        document.body.style.color = 'var(--text-dark)';
-      } else {
-        document.body.style.background = 'var(--bg-light)';
-        document.body.style.color = 'var(--text-light)';
-      }
+      document.body.style.background = darkMode ? 'var(--bg-dark)' : 'var(--bg-light)';
+      document.body.style.color = darkMode ? 'var(--text-dark)' : 'var(--text-light)';
     });
   </script>
 </body>
