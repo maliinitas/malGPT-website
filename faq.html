@@ -5,165 +5,96 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>FAQ - malGPT</title>
   <style>
-    /* Same styles as other pages */
-
     :root {
-      --bg-light: #fff;
-      --text-light: #000;
-      --section-bg-light: #f2f2f2;
-      --accent-light: #7289da;
-
       --bg-dark: #2c2f33;
-      --text-dark: #fff;
+      --text-dark: #ffffff;
       --section-bg-dark: #23272a;
-      --accent-dark: #7289da;
+      --highlight-dark: #7289da;
+      --bg-light: #f4f4f4;
+      --text-light: #222;
+      --section-bg-light: #ffffff;
+      --highlight-light: #5865f2;
     }
 
     body {
+      margin: 0;
+      padding: 0;
       font-family: Arial, sans-serif;
-      max-width: 800px;
-      margin: 40px auto;
-      padding: 0 20px;
       background: var(--bg-dark);
       color: var(--text-dark);
-      padding-top: 70px;
-      transition: background 0.3s, color 0.3s;
-    }
-
-    body.light-mode {
-      background: var(--bg-light);
-      color: var(--text-light);
-    }
-
-    h1, h2 {
-      color: var(--accent-dark);
-      transition: color 0.3s;
-    }
-
-    body.light-mode h1,
-    body.light-mode h2 {
-      color: var(--accent-light);
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
     }
 
     header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
       background: var(--section-bg-dark);
-      color: var(--text-dark);
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: center;
-      padding: 15px 30px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-      z-index: 1000;
-      gap: 10px;
-      transition: background 0.3s, color 0.3s;
-    }
-
-    body.light-mode header {
-      background: var(--section-bg-light);
-      color: var(--text-light);
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      padding: 20px;
     }
 
     header h1 {
-      flex: 1 1 150px;
       margin: 0;
-      font-size: 1.5rem;
+      font-size: 2rem;
+      color: var(--highlight-dark);
     }
 
     nav {
-      flex: 3 1 300px;
-      display: flex;
-      gap: 15px;
-      flex-wrap: wrap;
+      margin-top: 10px;
     }
 
     nav a {
-      color: var(--accent-dark);
+      color: var(--text-dark);
+      margin: 0 10px;
       text-decoration: none;
-      font-weight: 600;
-      padding: 6px 8px;
-      border-radius: 4px;
-      white-space: nowrap;
-      transition: color 0.3s, background-color 0.3s;
-    }
-
-    body.light-mode nav a {
-      color: var(--accent-light);
+      font-weight: bold;
     }
 
     nav a:hover {
       text-decoration: underline;
-      background-color: rgba(114, 137, 218, 0.2);
     }
 
     #darkModeToggle {
-      flex: 0 0 auto;
+      margin-top: 10px;
       padding: 6px 12px;
       background: #444;
       color: #fff;
       border: none;
       border-radius: 6px;
       cursor: pointer;
-      transition: background 0.3s;
-      white-space: nowrap;
     }
 
-    #darkModeToggle:hover {
-      background: #555;
+    main {
+      flex: 1;
+      padding: 40px 20px;
+      max-width: 800px;
+      margin: 0 auto;
     }
 
-    body.light-mode #darkModeToggle {
-      background: #ddd;
-      color: #333;
-    }
-
-    body.light-mode #darkModeToggle:hover {
-      background: #ccc;
-    }
-
-    /* Responsive */
-
-    @media (max-width: 600px) {
-      header {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 15px 20px;
-      }
-      nav {
-        width: 100%;
-        justify-content: flex-start;
-        gap: 10px;
-        margin-bottom: 10px;
-      }
-      #darkModeToggle {
-        align-self: flex-end;
-      }
-    }
-
-    .faq-section {
-      background: var(--section-bg-dark);
-      padding: 20px;
-      border-radius: 8px;
-      transition: background 0.3s;
-    }
-
-    body.light-mode .faq-section {
-      background: var(--section-bg-light);
+    h2 {
+      color: var(--highlight-dark);
     }
 
     details {
-      margin-bottom: 12px;
+      background: var(--section-bg-dark);
+      border-radius: 8px;
+      padding: 12px;
+      margin: 12px 0;
       cursor: pointer;
     }
 
     summary {
-      font-weight: 600;
-      font-size: 1.1rem;
+      font-weight: bold;
+      font-size: 1.1em;
+      outline: none;
+    }
+
+    footer {
+      background: var(--section-bg-dark);
+      color: #aaa;
+      text-align: center;
+      padding: 15px;
+      font-size: 0.9em;
     }
   </style>
 </head>
@@ -172,42 +103,49 @@
     <h1>malGPT</h1>
     <nav>
       <a href="index.html">Home</a>
-      <a href="donate.html">Donate</a>
       <a href="faq.html">FAQ</a>
-      <a href="https://discord.gg/AtxX6ZPAd8" target="_blank" rel="noopener">Support</a>
+      <a href="donate.html">Donate</a>
+      <a href="support.html">Support</a>
     </nav>
     <button id="darkModeToggle">Toggle Dark Mode</button>
   </header>
 
   <main>
     <h2>Frequently Asked Questions</h2>
-    <div class="faq-section">
-      <details>
-        <summary>What is malGPT?</summary>
-        <p>malGPT is a Discord bot that integrates GPT-based AI features and fun commands for your server.</p>
-      </details>
 
-      <details>
-        <summary>How do I invite malGPT to my server?</summary>
-        <p>Use the invite link on the home page or <a href="index.html#invite">click here</a> to invite the bot.</p>
-      </details>
+    <details>
+      <summary>What is malGPT?</summary>
+      <p>malGPT is a Discord bot powered by GPT technology, offering fun commands, chat features, and helpful moderation tools.</p>
+    </details>
 
-      <details>
-        <summary>Is malGPT free to use?</summary>
-        <p>Yes! malGPT is free to use. Donations are optional to help support hosting costs.</p>
-      </details>
+    <details>
+      <summary>How do I invite malGPT to my server?</summary>
+      <p>You can invite malGPT using the invite link on the <a href="index.html" style="color: var(--highlight-dark);">Home page</a>.</p>
+    </details>
 
-      <details>
-        <summary>Where can I get support?</summary>
-        <p>Join the <a href="https://discord.gg/AtxX6ZPAd8" target="_blank" rel="noopener noreferrer">support server</a> anytime for help.</p>
-      </details>
-    </div>
+    <details>
+      <summary>Is malGPT free to use?</summary>
+      <p>Yes! malGPT is free to invite and use with basic features, but donations help keep the bot running and improve it.</p>
+    </details>
+
+    <details>
+      <summary>How do I get support?</summary>
+      <p>Join our <a href="support.html" style="color: var(--highlight-dark);">Support Server</a> for help and community discussions.</p>
+    </details>
   </main>
 
+  <footer>
+    &copy; 2025 malGPT. All rights reserved.
+  </footer>
+
   <script>
-    const toggle = document.getElementById('darkModeToggle');
-    toggle.addEventListener('click', () => {
-      document.body.classList.toggle('light-mode');
+    const toggleBtn = document.getElementById('darkModeToggle');
+    let darkMode = true;
+
+    toggleBtn.addEventListener('click', () => {
+      darkMode = !darkMode;
+      document.body.style.background = darkMode ? 'var(--bg-dark)' : 'var(--bg-light)';
+      document.body.style.color = darkMode ? 'var(--text-dark)' : 'var(--text-light)';
     });
   </script>
 </body>
