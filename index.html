@@ -6,136 +6,185 @@
   <title>malGPT - Your Discord Bot</title>
   <style>
     :root {
-      --bg-color: #2c2f33;
-      --text-color: #ffffff;
-      --accent-color: #7289da;
-      --button-hover: #5b6eae;
-      --section-bg: #23272a;
-    }
+      --bg-light: #fff;
+      --text-light: #000;
+      --section-bg-light: #f2f2f2;
+      --accent-light: #7289da;
 
-    body.light-mode {
-      --bg-color: #ffffff;
-      --text-color: #2c2f33;
-      --accent-color: #5865F2;
-      --button-hover: #4a52b1;
-      --section-bg: #f0f0f0;
+      --bg-dark: #2c2f33;
+      --text-dark: #fff;
+      --section-bg-dark: #23272a;
+      --accent-dark: #7289da;
     }
 
     body {
       font-family: Arial, sans-serif;
-      margin: 0;
-      padding-top: 80px; /* make space for fixed header */
-      background-color: var(--bg-color);
-      color: var(--text-color);
-      transition: background-color 0.3s, color 0.3s;
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 20px;
+      background: var(--bg-dark);
+      color: var(--text-dark);
+      padding-top: 70px; /* space for fixed header */
+      transition: background 0.3s, color 0.3s;
     }
 
-    header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background: var(--section-bg);
-      color: var(--text-color);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 40px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-      z-index: 1000;
+    body.light-mode {
+      background: var(--bg-light);
+      color: var(--text-light);
     }
 
-    header h1 {
-      margin: 0;
-      font-size: 1.5em;
+    h1, h2 {
+      color: var(--accent-dark);
+      transition: color 0.3s;
     }
 
-    nav {
-      display: flex;
-      gap: 20px;
-    }
-
-    nav a {
-      color: var(--accent-color);
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    nav a:hover {
-      text-decoration: underline;
-    }
-
-    #darkModeToggle {
-      padding: 8px 14px;
-      background: #444;
-      color: #fff;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-
-    #darkModeToggle:hover {
-      background: #555;
-    }
-
-    main {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 20px;
-    }
-
-    h2 {
-      color: var(--accent-color);
+    body.light-mode h1,
+    body.light-mode h2 {
+      color: var(--accent-light);
     }
 
     a.invite-button {
       display: inline-block;
       margin: 20px 0;
       padding: 12px 24px;
-      background-color: var(--accent-color);
+      background-color: var(--accent-dark);
       color: white;
       border-radius: 6px;
       font-weight: bold;
       text-decoration: none;
       transition: background-color 0.3s ease;
     }
-
     a.invite-button:hover {
-      background-color: var(--button-hover);
+      background-color: #5b6eae;
+    }
+
+    body.light-mode a.invite-button {
+      background-color: var(--accent-light);
+    }
+
+    body.light-mode a.invite-button:hover {
+      background-color: #5b6eae;
     }
 
     .commands {
-      background: var(--section-bg);
+      background: var(--section-bg-dark);
       padding: 15px;
       border-radius: 8px;
+      transition: background 0.3s;
+    }
+
+    body.light-mode .commands {
+      background: var(--section-bg-light);
     }
 
     ul {
       list-style: none;
       padding-left: 0;
     }
-
     li {
       margin: 8px 0;
     }
 
-    .support-link {
-      margin-top: 30px;
+    /* HEADER */
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: var(--section-bg-dark);
+      color: var(--text-dark);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+      z-index: 1000;
+      gap: 10px;
+      transition: background 0.3s, color 0.3s;
     }
 
-    .support-link a {
-      color: var(--accent-color);
-      font-weight: bold;
+    body.light-mode header {
+      background: var(--section-bg-light);
+      color: var(--text-light);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     }
 
-    footer {
-      margin-top: 40px;
-      padding-top: 20px;
-      border-top: 1px solid #444;
-      text-align: center;
-      font-size: 0.9em;
-      color: #aaa;
+    header h1 {
+      flex: 1 1 150px;
+      margin: 0;
+      font-size: 1.5rem;
+    }
+
+    nav {
+      flex: 3 1 300px;
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: var(--accent-dark);
+      text-decoration: none;
+      font-weight: 600;
+      padding: 6px 8px;
+      border-radius: 4px;
+      white-space: nowrap;
+      transition: color 0.3s, background-color 0.3s;
+    }
+
+    body.light-mode nav a {
+      color: var(--accent-light);
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+      background-color: rgba(114, 137, 218, 0.2);
+    }
+
+    #darkModeToggle {
+      flex: 0 0 auto;
+      padding: 6px 12px;
+      background: #444;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s;
+      white-space: nowrap;
+    }
+
+    #darkModeToggle:hover {
+      background: #555;
+    }
+
+    body.light-mode #darkModeToggle {
+      background: #ddd;
+      color: #333;
+    }
+
+    body.light-mode #darkModeToggle:hover {
+      background: #ccc;
+    }
+
+    /* Responsive */
+
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px 20px;
+      }
+      nav {
+        width: 100%;
+        justify-content: flex-start;
+        gap: 10px;
+        margin-bottom: 10px;
+      }
+      #darkModeToggle {
+        align-self: flex-end;
+      }
     }
   </style>
 </head>
@@ -146,7 +195,7 @@
       <a href="index.html">Home</a>
       <a href="donate.html">Donate</a>
       <a href="faq.html">FAQ</a>
-      <a href="https://discord.gg/AtxX6ZPAd8" target="_blank">Support</a>
+      <a href="https://discord.gg/AtxX6ZPAd8" target="_blank" rel="noopener">Support</a>
     </nav>
     <button id="darkModeToggle">Toggle Dark Mode</button>
   </header>
@@ -166,26 +215,26 @@
     <h2>Commands</h2>
     <div class="commands">
       <ul>
-        <li><strong>/ping</strong> – Replies with "Pong!"</li>
-        <li><strong>/coinflip</strong> – Flips a coin</li>
-        <li><strong>/roll</strong> – Rolls a number between 1–100</li>
-        <li><strong>/8ball</strong> – Magic 8-Ball responses</li>
-        <li><strong>/avatar</strong> – Show user avatars</li>
-        <li><strong>/fact</strong> – Get a random fact</li>
+        <li><strong>/ping</strong> - Replies with "Pong!" to test if the bot is responsive.</li>
+        <li><strong>/coinflip</strong> - Flips a coin and returns either "Heads" or "Tails".</li>
+        <li><strong>/roll</strong> - Rolls a random number between 1 and 100.</li>
+        <li><strong>/8ball</strong> - Answers your yes/no questions with a Magic 8-Ball style response.</li>
+        <li><strong>/avatar</strong> - Shows the avatar of a mentioned user or yourself.</li>
       </ul>
     </div>
 
-    <div class="support-link">
-      <p>Need help? Join our <a href="https://discord.gg/AtxX6ZPAd8" target="_blank">Support Server</a>.</p>
-    </div>
+    <h2>Support</h2>
+    <p>
+      Need help? Join our
+      <a href="https://discord.gg/AtxX6ZPAd8" target="_blank" rel="noopener noreferrer" style="color:#7289da;">
+        Support Server
+      </a>.
+    </p>
   </main>
 
-  <footer>
-    <p>&copy; 2025 malGPT. All rights reserved.</p>
-  </footer>
-
   <script>
-    document.getElementById('darkModeToggle').addEventListener('click', () => {
+    const toggle = document.getElementById('darkModeToggle');
+    toggle.addEventListener('click', () => {
       document.body.classList.toggle('light-mode');
     });
   </script>
