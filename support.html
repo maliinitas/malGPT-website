@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Support - malGPT</title>
+  <style>
+    :root {
+      --bg-dark: #2c2f33;
+      --text-dark: #ffffff;
+      --section-bg-dark: #23272a;
+      --highlight-dark: #7289da;
+      --bg-light: #f4f4f4;
+      --text-light: #222;
+      --section-bg-light: #ffffff;
+      --highlight-light: #5865f2;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: var(--bg-dark);
+      color: var(--text-dark);
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background: var(--section-bg-dark);
+      text-align: center;
+      padding: 20px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+      color: var(--highlight-dark);
+    }
+
+    nav {
+      margin-top: 10px;
+    }
+
+    nav a {
+      color: var(--text-dark);
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    #darkModeToggle {
+      margin-top: 10px;
+      padding: 6px 12px;
+      background: #444;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    main {
+      flex: 1;
+      padding: 40px 20px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    h2 {
+      color: var(--highlight-dark);
+    }
+
+    p {
+      line-height: 1.6;
+    }
+
+    a.support-link {
+      color: var(--highlight-dark);
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    a.support-link:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      background: var(--section-bg-dark);
+      color: #aaa;
+      text-align: center;
+      padding: 15px;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>malGPT</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="faq.html">FAQ</a>
+      <a href="donate.html">Donate</a>
+      <a href="support.html">Support</a>
+    </nav>
+    <button id="darkModeToggle">Toggle Dark Mode</button>
+  </header>
+
+  <main>
+    <h2>Support Server</h2>
+    <p>Need help or want to chat with the community? Join our <a href="https://discord.gg/AtxX6ZPAd8" target="_blank" rel="noopener noreferrer" class="support-link">Support Server</a>.</p>
+    <p>We’re here to assist with any questions, bugs, or feature requests you may have regarding malGPT.</p>
+  </main>
+
+  <footer>
+    &copy; 2025 malGPT. All rights reserved.
+  </footer>
+
+  <script>
+    const toggleBtn = document.getElementById('darkModeToggle');
+    let darkMode = true;
+
+    toggleBtn.addEventListener('click', () => {
+      darkMode = !darkMode;
+      document.body.style.background = darkMode ? 'var(--bg-dark)' : 'var(--bg-light)';
+      document.body.style.color = darkMode ? 'var(--text-dark)' : 'var(--text-light)';
+    });
+  </script>
+</body>
+</html>
