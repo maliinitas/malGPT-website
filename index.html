@@ -5,142 +5,192 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>malGPT - Your Discord Bot</title>
   <style>
+    :root {
+      --bg-color: #2c2f33;
+      --text-color: #ffffff;
+      --accent-color: #7289da;
+      --button-hover: #5b6eae;
+      --section-bg: #23272a;
+    }
+
+    body.light-mode {
+      --bg-color: #ffffff;
+      --text-color: #2c2f33;
+      --accent-color: #5865F2;
+      --button-hover: #4a52b1;
+      --section-bg: #f0f0f0;
+    }
+
     body {
       font-family: Arial, sans-serif;
-      max-width: 800px;
-      margin: 40px auto;
-      padding: 0 20px;
-      background: #2c2f33;
-      color: #fff;
-      transition: background 0.3s, color 0.3s;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+      transition: background-color 0.3s, color 0.3s;
     }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
     h1, h2 {
-      color: #7289da;
+      color: var(--accent-color);
     }
-    a.invite-button {
+
+    nav {
+      display: flex;
+      gap: 15px;
+      margin: 20px 0;
+    }
+
+    nav a {
+      color: var(--accent-color);
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .invite-button {
       display: inline-block;
       margin: 20px 0;
       padding: 12px 24px;
-      background-color: #7289da;
+      background-color: var(--accent-color);
       color: white;
       border-radius: 6px;
       font-weight: bold;
       text-decoration: none;
       transition: background-color 0.3s ease;
     }
-    a.invite-button:hover {
-      background-color: #5b6eae;
+
+    .invite-button:hover {
+      background-color: var(--button-hover);
     }
-    .commands {
-      background: #23272a;
+
+    .commands, .section-box {
+      background: var(--section-bg);
       padding: 15px;
       border-radius: 8px;
+      margin-bottom: 20px;
     }
+
     ul {
       list-style: none;
       padding-left: 0;
     }
+
     li {
       margin: 8px 0;
     }
 
-    /* Dark mode styles */
-    body.dark-mode {
-      background: #eaeaea;
-      color: #222;
-    }
-    body.dark-mode h1,
-    body.dark-mode h2 {
-      color: #4a69ad;
-    }
-    body.dark-mode a.invite-button {
-      background-color: #99aaff;
-      color: #222;
-    }
-    body.dark-mode a.invite-button:hover {
-      background-color: #7a8fcc;
-    }
-    body.dark-mode .commands {
-      background: #d4d7dc;
-      color: #222;
+    footer {
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid #444;
+      text-align: center;
+      font-size: 0.9em;
+      color: #aaa;
     }
 
-    /* Dark mode toggle button style */
     #darkModeToggle {
-      cursor: pointer;
-      background: #7289da;
+      padding: 8px 14px;
+      background: #444;
+      color: #fff;
       border: none;
-      color: white;
-      padding: 10px 18px;
       border-radius: 6px;
-      font-weight: bold;
-      margin-bottom: 20px;
-      transition: background-color 0.3s ease;
+      cursor: pointer;
+      transition: background 0.3s;
     }
+
     #darkModeToggle:hover {
-      background-color: #5b6eae;
+      background: #555;
     }
   </style>
 </head>
 <body>
-  <button id="darkModeToggle">Toggle Dark Mode</button>
+  <header>
+    <h1>malGPT</h1>
+    <button id="darkModeToggle">Toggle Dark Mode</button>
+  </header>
 
-  <h1>malGPT</h1>
-  <p>Welcome to malGPT, your Discord bot for everything GPT-related!</p>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#commands">Commands</a>
+    <a href="#support">Support</a>
+    <a href="#donations">Donations</a>
+  </nav>
 
-  <a
-    href="https://discord.com/oauth2/authorize?client_id=1378946485747712030&permissions=67584&scope=bot%20applications.commands"
-    target="_blank"
-    rel="noopener noreferrer"
-    class="invite-button"
-  >
-    Invite malGPT to Your Server
-  </a>
+  <section id="home">
+    <p>Welcome to malGPT, your Discord bot for everything GPT-related!</p>
+    <a
+      href="https://discord.com/oauth2/authorize?client_id=1378946485747712030&permissions=67584&scope=bot%20applications.commands"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="invite-button"
+    >
+      Invite malGPT to Your Server
+    </a>
+  </section>
 
-  <h2>Commands</h2>
-  <div class="commands">
-    <ul>
-      <li><strong>/ping</strong> - Replies with "Pong!" to test if the bot is responsive.</li>
-      <li><strong>/coinflip</strong> - Flips a coin and returns either "Heads" or "Tails".</li>
-      <li><strong>/roll</strong> - Rolls a random number between 1 and 100.</li>
-      <li><strong>/8ball</strong> - Answers your yes/no questions with a Magic 8-Ball style response.</li>
-      <li><strong>/avatar</strong> - Shows the avatar of a mentioned user or yourself.</li>
-      <li><strong>/fact</strong> - Sends a random interesting fact.</li>
-    </ul>
-  </div>
+  <section id="commands">
+    <h2>✅ Basic & Fun Slash Commands</h2>
+    <div class="commands">
+      <ul>
+        <li><strong>/ping</strong> – Replies with "Pong!" to test if the bot is responsive.</li>
+        <li><strong>/coinflip</strong> – Flips a coin and returns either "Heads" or "Tails".</li>
+        <li><strong>/roll</strong> – Rolls a random number between 1 and 100.</li>
+        <li><strong>/8ball</strong> – Answers your yes/no questions with a Magic 8-Ball style response.</li>
+        <li><strong>/avatar</strong> – Shows the avatar of a mentioned user or yourself.</li>
+      </ul>
+    </div>
+  </section>
 
-  <h2>Support</h2>
-  <p>
-    Need help? Join our
-    <a href="YOUR_SUPPORT_SERVER_LINK" target="_blank" rel="noopener noreferrer" style="color:#7289da;">
-      Support Server
-    </a>.
-  </p>
+  <section id="support">
+    <h2>Support</h2>
+    <p>
+      Need help? Join our
+      <a href="https://discord.gg/AtxX6ZPAd8" target="_blank" rel="noopener noreferrer" style="color:var(--accent-color);">
+        Support Server
+      </a>.
+    </p>
+  </section>
 
-  <footer style="margin-top: 40px; font-size: 0.9em; color: #888;">
-    &copy; 2025 malGPT Bot
+  <section id="donations">
+    <h2>Donations</h2>
+    <div class="section-box">
+      <p>
+        If you enjoy using malGPT and want to support its development and hosting costs, donations are greatly appreciated!
+      </p>
+      <a
+        href="Ko-fi.com/maliinitasofficial"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="invite-button"
+        style="background-color: #f39c12;"
+        onmouseover="this.style.backgroundColor='#d78e0c'"
+        onmouseout="this.style.backgroundColor='#f39c12'"
+      >
+        Donate Here
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 malGPT. All rights reserved.</p>
   </footer>
 
   <script>
     const toggleBtn = document.getElementById('darkModeToggle');
-
-    function loadTheme() {
-      if (localStorage.getItem('theme') === 'dark') {
-        document.body.classList.add('dark-mode');
-      }
-    }
-
-    function toggleTheme() {
-      document.body.classList.toggle('dark-mode');
-      if (document.body.classList.contains('dark-mode')) {
-        localStorage.setItem('theme', 'dark');
-      } else {
-        localStorage.setItem('theme', 'light');
-      }
-    }
-
-    toggleBtn.addEventListener('click', toggleTheme);
-    loadTheme();
+    toggleBtn.addEventListener('click', () => {
+      document.body.classList.toggle('light-mode');
+    });
   </script>
 </body>
 </html>
