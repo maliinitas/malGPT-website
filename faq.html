@@ -17,9 +17,10 @@
     }
 
     body {
-      margin: 0;
-      padding: 0;
       font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 20px;
       background: var(--bg-dark);
       color: var(--text-dark);
       display: flex;
@@ -29,13 +30,14 @@
 
     header {
       background: var(--section-bg-dark);
-      text-align: center;
       padding: 20px;
+      text-align: center;
+      border-radius: 8px;
+      margin-bottom: 20px;
     }
 
     header h1 {
       margin: 0;
-      font-size: 2rem;
       color: var(--highlight-dark);
     }
 
@@ -45,7 +47,7 @@
 
     nav a {
       color: var(--text-dark);
-      margin: 0 10px;
+      margin: 0 12px;
       text-decoration: none;
       font-weight: bold;
     }
@@ -55,8 +57,8 @@
     }
 
     #darkModeToggle {
-      margin-top: 10px;
-      padding: 6px 12px;
+      margin-top: 15px;
+      padding: 8px 14px;
       background: #444;
       color: #fff;
       border: none;
@@ -66,27 +68,27 @@
 
     main {
       flex: 1;
-      padding: 40px 20px;
-      max-width: 800px;
-      margin: 0 auto;
     }
 
     h2 {
       color: var(--highlight-dark);
     }
 
-    details {
+    .faq-section {
       background: var(--section-bg-dark);
+      padding: 20px;
       border-radius: 8px;
-      padding: 12px;
-      margin: 12px 0;
-      cursor: pointer;
     }
 
-    summary {
+    .faq-section dt {
       font-weight: bold;
-      font-size: 1.1em;
-      outline: none;
+      margin-top: 15px;
+      margin-bottom: 5px;
+    }
+
+    .faq-section dd {
+      margin-left: 0;
+      margin-bottom: 10px;
     }
 
     footer {
@@ -95,6 +97,8 @@
       text-align: center;
       padding: 15px;
       font-size: 0.9em;
+      margin-top: 40px;
+      border-radius: 8px;
     }
   </style>
 </head>
@@ -106,32 +110,27 @@
       <a href="faq.html">FAQ</a>
       <a href="donate.html">Donate</a>
       <a href="support.html">Support</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms &amp; Conditions</a>
     </nav>
     <button id="darkModeToggle">Toggle Dark Mode</button>
   </header>
 
   <main>
     <h2>Frequently Asked Questions</h2>
+    <dl class="faq-section">
+      <dt>Q: How do I invite malGPT to my server?</dt>
+      <dd>A: Click the invite button on the Home page to authorize malGPT on your Discord server.</dd>
 
-    <details>
-      <summary>What is malGPT?</summary>
-      <p>malGPT is a Discord bot powered by GPT technology, offering fun commands, chat features, and helpful moderation tools.</p>
-    </details>
+      <dt>Q: Is malGPT free to use?</dt>
+      <dd>A: Yes, malGPT is completely free! Donations help keep it running.</dd>
 
-    <details>
-      <summary>How do I invite malGPT to my server?</summary>
-      <p>You can invite malGPT using the invite link on the <a href="index.html" style="color: var(--highlight-dark);">Home page</a>.</p>
-    </details>
+      <dt>Q: How do I get support?</dt>
+      <dd>A: Join our Support Server linked on the Support page.</dd>
 
-    <details>
-      <summary>Is malGPT free to use?</summary>
-      <p>Yes! malGPT is free to invite and use with basic features, but donations help keep the bot running and improve it.</p>
-    </details>
-
-    <details>
-      <summary>How do I get support?</summary>
-      <p>Join our <a href="support.html" style="color: var(--highlight-dark);">Support Server</a> for help and community discussions.</p>
-    </details>
+      <dt>Q: What commands does malGPT have?</dt>
+      <dd>A: Check out the Commands list on the Home page.</dd>
+    </dl>
   </main>
 
   <footer>
